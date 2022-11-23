@@ -1,5 +1,6 @@
-// const connection = require('../config/connection');
-// const { Post, Tags } = require('../models');
+const connection = require('../config/connection');
+const { User, Thoughts, Reaction } = require('../models');
+const mongoose = require('mongoose');
 // // Import functions for seed data
 // const { getRandomColor, getRandomPost, genRandomIndex } = require('./data');
 
@@ -7,11 +8,20 @@
 // console.time('seeding');
 
 // // Creates a connection to mongodb
-// connection.once('open', async () => {
-//   // Delete the entries in the collection
-//   await Post.deleteMany({});
-//   await Tags.deleteMany({});
+connection.once('open', async () => {
+  // Delete the entries in the collection
+  await User.deleteMany({});
+//   await Thoughts.deleteMany({});
+//   await Reaction.deleteMany({});
 
+  User.create([
+     { username: 'user 1', email: 'user1@test.com',thoughts:[1,2], friends: 2 },
+     { username: 'user 2', email: 'user2@test.com',thoughts:[], friends: 1 },
+     { username: 'user 3', email: 'user3@test.com',thoughts:[3], friends: 5 },
+     { username: 'user 4', email: 'user4@test.com',thoughts:[5], friends: 3 },
+     { username: 'user 5', email: 'user5@test.com',thoughts:[4], friends: 4 },
+     
+   ]);
 //   // Empty arrays for randomly generated posts and tags
 //   const tags = [];
 //   const posts = [];
@@ -49,4 +59,4 @@
 //   console.table(posts, ['published', 'tags', '_id']);
 //   console.timeEnd('seeding');
 //   process.exit(0);
-// });
+});

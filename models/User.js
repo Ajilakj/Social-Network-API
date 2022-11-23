@@ -40,6 +40,6 @@ userSchema
     return this.friends.length;
   });
 
-const User = model('post', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

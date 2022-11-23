@@ -1,50 +1,11 @@
-// const lorum = [
-//   'lorem',
-//   'imsum',
-//   'dolor',
-//   'sit',
-//   'amet',
-//   'consectetur',
-//   'adipiscing',
-//   'elit',
-//   'curabitur',
-//   'vel',
-//   'hendrerit',
-//   'libero',
-//   'eleifend',
-//   'blandit',
-//   'nunc',
-//   'ornare',
-//   'odio',
-//   'ut',
-//   'orci',
-//   'gravida',
-//   'imperdiet',
-//   'nullam',
-//   'purus',
-//   'lacinia',
-//   'a',
-//   'pretium',
-//   'quis',
-// ];
-
-// const genRandomIndex = (arr) => Math.floor(Math.random() * arr.length);
-
-// const getRandomWord = () => `${lorum[genRandomIndex(lorum)]}`;
-
-// const getRandomPost = (words) => {
-//   let post = '';
-//   for (let i = 0; i < words; i++) {
-//     post += ` ${getRandomWord()}`;
-//   }
-//   return post;
-// };
-// const getRandomColor = () =>
-//   `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-
-// module.exports = {
-//   getRandomWord,
-//   getRandomColor,
-//   getRandomPost,
-//   genRandomIndex,
-// };
+Book.deleteMany({});
+// Create new instances of the model, a document
+Book.create([
+  { title: 'Hello, World', price: 5, inStock: true },
+  { title: 'Hello World 2.0', price: 10, inStock: false },
+  { title: 'Hello, World 3,0', price: 7, inStock: true },
+  { title: 'Hello World 4.0', price: 20, inStock: true },
+  { title: 'Hello, World 5.0', price: 2, inStock: false },
+  { title: 'Hello World Infinity', price: 25, inStock: false },
+  { title: 'Hello World Infinity and Beyond', price: 4, inStock: true },
+]);
