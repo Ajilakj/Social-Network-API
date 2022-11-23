@@ -1,6 +1,5 @@
 const connection = require('../config/connection');
 const { User, Thoughts, Reaction } = require('../models');
-const mongoose = require('mongoose');
 // // Import functions for seed data
 // const { getRandomColor, getRandomPost, genRandomIndex } = require('./data');
 
@@ -11,17 +10,34 @@ const mongoose = require('mongoose');
 connection.once('open', async () => {
   // Delete the entries in the collection
   await User.deleteMany({});
-//   await Thoughts.deleteMany({});
+  await Thoughts.deleteMany({});
 //   await Reaction.deleteMany({});
 
-  User.create([
-     { username: 'user 1', email: 'user1@test.com',thoughts:[1,2], friends: 2 },
-     { username: 'user 2', email: 'user2@test.com',thoughts:[], friends: 1 },
-     { username: 'user 3', email: 'user3@test.com',thoughts:[3], friends: 5 },
-     { username: 'user 4', email: 'user4@test.com',thoughts:[5], friends: 3 },
-     { username: 'user 5', email: 'user5@test.com',thoughts:[4], friends: 4 },
+
+User.create([
+  { username: 'user 1', email: 'user1@test.com'},
+  { username: 'user 2', email: 'user2@test.com'},
+  { username: 'user 3', email: 'user3@test.com'},
+  { username: 'user 4', email: 'user4@test.com'},
+  { username: 'user 5', email: 'user5@test.com'},
+  
+]);
+Thoughts.create([
+  { username: 'user 1', thoughtText: 'testingthoughtText'},
+  { username: 'user 2', thoughtText: 'testingthoughtText'},
+  { username: 'user 3', thoughtText: 'testingthoughtText'},
+  { username: 'user 4', thoughtText: 'testingthoughtText'},
+  { username: 'user 5', thoughtText: 'testingthoughtText'},
+  
+]);
+  // User.create([
+  //    { username: 'user 1', email: 'user1@test.com',thoughts:[1,2], friends: "2" },
+  //    { username: 'user 2', email: 'user2@test.com',thoughts:[], friends: "1" },
+  //    { username: 'user 3', email: 'user3@test.com',thoughts:[3], friends: "5" },
+  //    { username: 'user 4', email: 'user4@test.com',thoughts:[5], friends: "3" },
+  //    { username: 'user 5', email: 'user5@test.com',thoughts:[4], friends: "4" },
      
-   ]);
+  //  ]);
 //   // Empty arrays for randomly generated posts and tags
 //   const tags = [];
 //   const posts = [];
